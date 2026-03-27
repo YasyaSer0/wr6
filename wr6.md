@@ -103,9 +103,9 @@ sudo groupadd financiers
 sudo groupadd founders
 sudo groupadd guests
 ```
-📌 Вставляєш скрін
+<img width="602" height="141" alt="image" src="https://github.com/user-attachments/assets/98338a60-0a54-4eca-811b-6e73de157d9a" />
 
-Рисунок 5 – Створення груп користувачів
+Рисунок 5 - Створення груп користувачів
 
 2.2 Створення користувачів та додавання їх до груп
 
@@ -120,45 +120,45 @@ sudo useradd -m -G група -s shell ім'я_користувача
 sudo useradd -m -G technical_support -s /bin/bash tech1
 sudo useradd -m -G technical_support -s /bin/bash tech2
 ```
-📌 Вставляєш скрін
+<img width="811" height="100" alt="image" src="https://github.com/user-attachments/assets/09a388ca-3657-4ade-b774-bb89b5c3a053" />
 
-Рисунок 6 – Користувачі Technical support
+Рисунок 6 - Користувачі Technical support
 
 Група Developers (zsh)
 ```bash
 sudo useradd -m -G developers -s /usr/bin/zsh dev1
 sudo useradd -m -G developers -s /usr/bin/zsh dev2
 ```
-📌 Вставляєш скрін
+<img width="795" height="55" alt="image" src="https://github.com/user-attachments/assets/1ed3e68d-12fb-47ca-843f-aac2849ebbc4" />
 
-Рисунок 7 – Користувачі Developers
+Рисунок 7 - Користувачі Developers
 
 Група Financiers (без доступу до shell)
 ```bash
 sudo useradd -m -G financiers -s /sbin/nologin fin1
 sudo useradd -m -G financiers -s /sbin/nologin fin2
 ```
-📌 Вставляєш скрін
+<img width="798" height="48" alt="image" src="https://github.com/user-attachments/assets/068362e9-4274-40eb-9523-d4496376bb34" />
 
-Рисунок 8 – Користувачі Financiers
+Рисунок 8 - Користувачі Financiers
 
 Група Founders (fish)
 ```bash
 sudo useradd -m -G founders -s /usr/bin/fish founder1
 sudo useradd -m -G founders -s /usr/bin/fish founder2
 ```
-📌 Вставляєш скрін
+<img width="806" height="46" alt="image" src="https://github.com/user-attachments/assets/1652ff09-6d77-4691-8193-a42a633a350a" />
 
-Рисунок 9 – Користувачі Founders
+Рисунок 9 - Користувачі Founders
 
 Група Guests (без доступу до shell)
 ```bash
 sudo useradd -m -G guests -s /sbin/nologin guest1
 sudo useradd -m -G guests -s /sbin/nologin guest2
 ```
-📌 Вставляєш скрін
+<img width="777" height="69" alt="image" src="https://github.com/user-attachments/assets/5ea795bf-ae8d-4e9c-aeab-cfd43d5fd1c7" />
 
-Рисунок 10 – Користувачі Guests
+Рисунок 10 - Користувачі Guests
 
 2.3 Перевірка створених користувачів
 
@@ -166,9 +166,11 @@ sudo useradd -m -G guests -s /sbin/nologin guest2
 ```bash
 cat /etc/passwd
 ```
-📌 Вставляєш скрін
+<img width="446" height="29" alt="image" src="https://github.com/user-attachments/assets/fb0b91eb-43d1-4c1d-8e68-12d075bc7da0" />
 
-Рисунок 11 – Перевірка користувачів у системі
+<img width="534" height="271" alt="image" src="https://github.com/user-attachments/assets/43fde958-fbf1-4ce1-af75-bcb3b78abc66" />
+
+Рисунок 11 - Перевірка користувачів у системі
 
 2.4 Перевірка груп користувачів
 
@@ -176,9 +178,11 @@ cat /etc/passwd
 ```bash
 cat /etc/group
 ```
-📌 Вставляєш скрін
+<img width="445" height="40" alt="image" src="https://github.com/user-attachments/assets/0fe2a936-46f4-40da-a71a-c9aa2ce948b9" />
 
-Рисунок 12 – Перевірка груп користувачів
+<img width="353" height="242" alt="image" src="https://github.com/user-attachments/assets/4b8458c6-8030-4b47-8ff3-9fcfe992b249" />
+
+Рисунок 12 - Перевірка груп користувачів
 
 ## Пояснення:
 - Створено 5 груп користувачів відповідно до ролей
