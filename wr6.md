@@ -189,3 +189,132 @@ cat /etc/group
 - 10 користувачів розподілено по групах
 - Кожному користувачу призначено відповідний shell
 - Для фінансистів та гостей доступ до shell заборонено через /sbin/nologin
+
+## 3. Призначення командних інтерпретаторів користувачам
+
+Для кожної групи користувачів було визначено командний інтерпретатор за замовчуванням відповідно до поставленого завдання:
+- Technical support - /bin/bash
+- Developers - /usr/bin/zsh
+- Financiers - /sbin/nologin
+- Founders - /usr/bin/fish
+- Guests - /sbin/nologin
+
+Призначення командних інтерпретаторів було виконано під час створення користувачів за допомогою параметра -s.
+
+### 3.1 Перевірка призначених командних інтерпретаторів
+
+Для перевірки встановлених shell було використано команду:
+```bash
+grep tech1 /etc/passwd
+grep dev1 /etc/passwd
+grep fin1 /etc/passwd
+grep founder1 /etc/passwd
+grep guest1 /etc/passwd
+```
+<img width="541" height="242" alt="image" src="https://github.com/user-attachments/assets/8123e633-727f-4227-9e89-9a55e5ef6edc" />
+
+Рисунок 13 - Перевірка командних інтерпретаторів користувачів
+
+### 3.2 Перегляд доступних командних інтерпретаторів у системі
+
+Для підтвердження наявності встановлених shell було використано команду:
+```bash
+cat /etc/shells
+```
+<img width="455" height="372" alt="image" src="https://github.com/user-attachments/assets/16d5ebc8-5c94-428e-9968-57f79df157fe" />
+
+Рисунок 14 - Список доступних командних інтерпретаторів
+
+### Пояснення
+
+У процесі виконання роботи було встановлено різні командні інтерпретатори для користувачів залежно від їх ролі:
+- адміністраторам призначено bash як стабільний стандартний shell;
+- розробникам - zsh для розширених можливостей;
+- керівникам - fish для зручності використання;
+- для фінансистів та гостей доступ до командного інтерпретатора обмежено за допомогою /sbin/nologin.
+
+## 4. Демонстрація роботи кожної групи користувачів у своєму командному інтерпретаторі
+
+### 4.1 Technical Support (bash)
+```bash
+sudo su - tech1
+whoami
+pwd
+date
+ls -la
+echo $SHELL
+```
+<img width="684" height="447" alt="image" src="https://github.com/user-attachments/assets/81081fa4-dd06-4f50-b960-3ced7178efe6" />
+
+Пояснення:
+
+Користувач tech1 з групи Technical Support працює в командному інтерпретаторі bash. Виконані базові команди демонструють доступ до системної інформації, домашнього каталогу та підтверджують правильність налаштування shell.
+
+### 4.2 Developers (zsh)
+```bash
+sudo su - dev1
+whoami
+pwd
+date
+ls -la
+echo $SHELL
+```
+<img width="858" height="546" alt="image" src="https://github.com/user-attachments/assets/645a50ba-86f6-4e39-abc6-1b148bf9c77e" />
+
+Пояснення:
+
+Користувач dev1 з групи Developers працює в командному інтерпретаторі zsh. Виконані базові команди демонструють доступ до системної інформації та домашнього каталогу, підтверджуючи правильність налаштування shell.
+
+### 4.3 Founders (fish)
+```bash
+sudo su - founder1
+whoami
+pwd
+date
+ls -la
+echo $SHELL
+```
+<img width="484" height="302" alt="image" src="https://github.com/user-attachments/assets/87561b37-3225-4fff-8e79-ad17df3b76d5" />
+
+Пояснення:
+
+Користувач founder1 з групи Founders працює в командному інтерпретаторі fish. Виконані базові команди демонструють доступ до системної інформації та домашнього каталогу, що підтверджує правильність налаштування shell.
+
+### 4.4 Financiers (nologin)
+```bash
+sudo su - fin1
+```
+<img width="474" height="95" alt="image" src="https://github.com/user-attachments/assets/63cc7554-9dc5-4eed-8ee0-3f22667c216f" />
+
+Пояснення:
+
+Користувач fin1 з групи Financiers не має доступу до командного інтерпретатора (shell /sbin/nologin). Це відповідає вимогам обмеження доступу для бухгалтерії та фінансистів, підтверджуючи правильну конфігурацію безпеки.
+
+### 4.5 Guests (nologin)
+```bash
+sudo su - guest1
+```
+<img width="499" height="66" alt="image" src="https://github.com/user-attachments/assets/7eed8e41-576b-4354-a68f-458df6bff85e" />
+
+Пояснення:
+
+Користувач guest1 з групи Guests не має доступу до командного інтерпретатора (shell /sbin/nologin). Це відповідає вимогам обмеження доступу для гостей, підтверджуючи правильну конфігурацію безпеки.
+
+## Conclusion 
+
+1. During the execution of Work-Case №6, all assigned tasks were successfully completed:
+
+2. Additional command interpreters zsh and fish were installed alongside the default bash. The capabilities of each shell were briefly described.
+
+3. Ten users were created and distributed into groups: Technical Support, Developers, Financiers, Founders, and Guests.
+   
+Each user was assigned a default shell according to their group:
+- Technical Support → bash
+- Developers → zsh
+- Founders → fish
+- Financiers → nologin
+- Guests → nologin
+  
+4. Examples of each user's work in their shell were demonstrated. For groups with restricted access (nologin), the system displayed a message indicating that login is not available.
+
+The results confirm the correct configuration of shells, proper user creation, and enforcement of access restrictions according to security requirements. All user groups can successfully perform their tasks within their assigned permissions.
